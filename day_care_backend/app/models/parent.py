@@ -15,9 +15,9 @@ class Parent(db.Model):
 def to_dict(self):
     return {
         'parent_id': self.parent_id,
-        'first_name': self.first_name,
-        'last_name': self.last_name,
+        'user_id': self.user_id,
         'address': self.address,
+        'reg_status': self.reg_status,
         'contacts': self.contacts
     }
 Parent.to_dict = to_dict

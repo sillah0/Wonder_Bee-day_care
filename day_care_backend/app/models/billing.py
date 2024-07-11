@@ -9,7 +9,7 @@ class Payment(db.Model):
     created_at = db.Column(db.DateTime, default=db.func.current_timestamp())
     status = db.Column(db.String(50), nullable=False)
     
-    user = db.relationship('User', backref=db.backref('payments', lazy=True))
+    user = db.relationship('User', back_populates='payments')
     
 def to_dict(self):
     return {
@@ -19,4 +19,4 @@ def to_dict(self):
         'status': self.status,
         'created_at': self.created_at
     }
-    
+Payment.to_dict = to_dict 

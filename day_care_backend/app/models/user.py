@@ -10,7 +10,7 @@ class User(db.Model):
     password = db.Column(db.String(120), nullable=False)
     role = db.Column(db.String(50), nullable=False)
     
-    payments = db.relationship('Payment', backref='user', lazy=True)
+    payments = db.relationship('Payment', back_populates='user', lazy=True)
     
 def to_dict(self):
     return {
